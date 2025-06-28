@@ -1,0 +1,50 @@
+.calculator--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  border: 1px solid;
+  width: 30vw;
+  height: 50vh;
+  /* align-items: flex-start; */
+  padding: 1vw;
+  margin: auto;
+}
+
+.display--box {
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.display {
+  padding: 1vh;
+  flex: 1;
+}
+
+.previous__input {
+  color: grey;
+  font-size: 1vw;
+}
+
+.current__input {
+  font-weight: bold;
+  font-size: 3vw;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  gap: 1vw;
+}
+
+button {
+  flex: 1;
+  font-size: 1.5vw;
+}
+
+.function--clear,
+.number--0 {
+  flex: 2.5;
+}

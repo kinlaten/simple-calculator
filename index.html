@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator--wrapper">
+      <div class="row display--box">
+        <div class="display previous__input"></div>
+        <div class="display current__input"></div>
+      </div>
+      <div class="row row--1">
+        <button class="function function--clear">CLEAR</button>
+        <button class="function function--delete">
+          <img src="assets/delete.svg" alt="" />
+        </button>
+        <button class="operator operator--division">/</button>
+      </div>
+      <div class="row row--2">
+        <button class="number number--7">7</button
+        ><button class="number number--8">8</button
+        ><button class="number number--9">9</button
+        ><button class="operator operator--multiplication">x</button>
+      </div>
+      <div class="row row--3">
+        <button class="number number--4">4</button
+        ><button class="number number--5">5</button
+        ><button class="number number--6">6</button
+        ><button class="operator operator--subtraction">-</button>
+      </div>
+      <div class="row row--4">
+        <button class="number number--1">1</button
+        ><button class="number number--2">2</button
+        ><button class="number number--3">3</button
+        ><button class="operator operator--addition">+</button>
+      </div>
+      <div class="row row--5">
+        <button class="number number--0">0</button>
+        <button class="decimal-point">.</button>
+        <button class="operator operator--equality">=</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
