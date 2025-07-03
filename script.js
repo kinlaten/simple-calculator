@@ -7,6 +7,14 @@ window.addEventListener("load", () => {
     .filter((button) => button.value !== "=")
     .forEach((button) => {
       button.addEventListener("click", () => {
+        if (button.value === "clear") {
+          clearEquation();
+        } else if (button.value === "delete") {
+          deleteInput();
+        } else {
+          displayExplanation();
+          return;
+        }
         displayExplanation();
       });
     });
@@ -175,6 +183,8 @@ function displayExplanation() {
       calculator.currentOperator +
       " " +
       calculator.rightOperand;
+  } else {
+    explainInput.textContent = "";
   }
   return;
 }
@@ -199,4 +209,38 @@ function calculate(operator, leftOperand, rightOperand) {
 
   if (result) return result;
   return null;
+}
+
+function clearEquation() {
+  calculator.leftOperand = null;
+  calculator.rightOperand = null;
+  calculator.currentOperator = null;
+  calculator.result = null;
+  calculator.resetDisplay = true;
+  calculator.currentInput = "0";
+  displayInputOutput(calculator.currentInput);
+  displayExplanation();
+}
+
+function deleteInput() {
+  if (calculator.currentInput.length <= 1) {
+    calculator.currentInput = "0";
+    if (!calculator.rightOperand) {
+      calculator.leftOperand = null;
+    } else if (calculator.rightOperand) {
+      calculator.rightOperand = null;
+    }
+    console.log(calculator.currentInput);
+  }
+  // length of number > 1
+  else {
+    calculator.currentInput = calculator.currentInput.slice(0, -1);
+    if (!calculator.rightOperand) {
+      calculator.leftOperand = calculator.currentInput;
+    } else if (calculator.rightOperand) {
+      calculator.rightOperand = calculator.currentInput;
+    }
+  }
+  displayInputOutput(calculator.currentInput);
+  displayExplanation();
 }
